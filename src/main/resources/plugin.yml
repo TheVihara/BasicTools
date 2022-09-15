@@ -1,0 +1,13 @@
+main: org.infinityminers.Main
+version: 1.0
+name: BasicTools
+description: Provides you with basic tools, that will full-fill your server's needs.
+api-version: 1.19
+author: Vihara
+website: infinityminers.org
+commands:
+  heal:
+    description: When executed, heals the target.
+    permission: basictools.heal
+    permission-message: You do not have permission to use this command.
+    usage: "Usage /heal [player]"
