@@ -1,4 +1,5 @@
-#BasicTools
+<h1 align="left">BasicTools</h1>
+
 A Minecraft plugin, that provides you with a lot of basic/simple tools/features that will fullfill your server's needs.
 
 - 👨‍💻 Bug report [https://discord.infinityminers.org/](https://discord.infinityminers.org/)
