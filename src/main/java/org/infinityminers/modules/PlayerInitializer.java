@@ -1,9 +1,8 @@
-package org.infinityminers.listener;
+package org.infinityminers.modules;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
-import org.infinityminers.modules.BasicPlayer;
 
 import java.util.HashMap;
 import java.util.UUID;
@@ -14,9 +13,11 @@ public class PlayerInitializer implements Listener {
     @EventHandler
     public void onLogin(PlayerLoginEvent event) {
         var player = event.getPlayer();
-        var basicPlayer = new BasicPlayer(player);
 
-        basicPlayerHashMap.put(player.getUniqueId(), basicPlayer);
+        if (basicPlayerHashMap.get(player.getUniqueId()) == null)
+            return;
+
+        basicPlayerHashMap.put(player.getUniqueId(), new BasicPlayer(player));
     }
 
     public HashMap<UUID, BasicPlayer> getBasicPlayerHashMap() {

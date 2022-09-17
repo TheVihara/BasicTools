@@ -1,4 +1,4 @@
-package org.infinityminers.commands;
+package org.infinityminers.commands.basic;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -16,11 +16,9 @@ import java.util.List;
 import java.util.UUID;
 
 public class GodCommand implements TabExecutor {
-    private Main main;
     private HashMap<UUID, BasicPlayer> basicPlayerHashMap;
 
     public GodCommand(Main main) {
-        this.main = main;
         this.basicPlayerHashMap = main.getPlayerInit().getBasicPlayerHashMap();
     }
 

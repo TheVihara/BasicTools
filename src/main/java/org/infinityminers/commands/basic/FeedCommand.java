@@ -1,4 +1,4 @@
-package org.infinityminers.commands;
+package org.infinityminers.commands.basic;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -11,7 +11,7 @@ import org.bukkit.entity.Player;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HealCommand implements TabExecutor {
+public class FeedCommand implements TabExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         switch (args.length) {
@@ -22,7 +22,7 @@ public class HealCommand implements TabExecutor {
                 var player = (Player) sender;
 
                 player.setHealth(20);
-                player.sendMessage(ChatColor.GREEN + "Healed.");
+                player.sendMessage(ChatColor.GREEN + "Fed.");
             }
 
             case 1 -> {
@@ -32,10 +32,10 @@ public class HealCommand implements TabExecutor {
                     return false;
 
                 player.setHealth(20);
-                if (sender instanceof Player) player.sendMessage(ChatColor.GREEN + "You've been healed by " + player.getName() + "!");
-                else player.sendMessage(ChatColor.GREEN + "You've been healed by CONSOLE!");
+                if (sender instanceof Player) player.sendMessage(ChatColor.GREEN + "You've been fed by " + player.getName() + "!");
+                else player.sendMessage(ChatColor.GREEN + "You've been fed by CONSOLE!");
 
-                sender.sendMessage(ChatColor.GREEN + "Healed " + player.getName() + ".");
+                sender.sendMessage(ChatColor.GREEN + "Fed " + player.getName() + ".");
 
                 return true;
             }

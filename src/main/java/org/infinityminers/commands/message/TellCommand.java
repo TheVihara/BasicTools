@@ -1,4 +1,4 @@
-package org.infinityminers.commands;
+package org.infinityminers.commands.message;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -6,7 +6,7 @@ import org.bukkit.command.TabExecutor;
 
 import java.util.List;
 
-public class FeedCommand implements TabExecutor {
+public class TellCommand implements TabExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         return false;

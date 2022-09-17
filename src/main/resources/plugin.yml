@@ -11,3 +11,18 @@ commands:
     permission: basictools.heal
     permission-message: You do not have permission to use this command.
     usage: "Usage /heal [player]"
+  feed:
+    description: When executed, feeds the target.
+    permission: basictools.feed
+    permission-message: You do not have permission to use this command.
+    usage: "Usage /feed [player]"
+  god:
+    description: When executed, the target becomes god.
+    permission: basictools.god
+    permission-message: You do not have permission to use this command.
+    usage: "Usage /god [player]"
+  fly:
+    description: When executed, the target's fly mode gets toggled.
+    permission: basictools.fly
+    permission-message: You do not have permission to use this command.
+    usage: "Usage /fly [player]"

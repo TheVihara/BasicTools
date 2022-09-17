@@ -1,9 +1,12 @@
 package org.infinityminers;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import org.infinityminers.commands.HealCommand;
+import org.infinityminers.commands.basic.FeedCommand;
+import org.infinityminers.commands.basic.FlyCommand;
+import org.infinityminers.commands.basic.GodCommand;
+import org.infinityminers.commands.basic.HealCommand;
 import org.infinityminers.listener.EntityDamageByEntityListener;
-import org.infinityminers.listener.PlayerInitializer;
+import org.infinityminers.modules.PlayerInitializer;
 
 public class Main extends JavaPlugin {
     private PlayerInitializer playerInit;
@@ -21,6 +24,9 @@ public class Main extends JavaPlugin {
 
         // Register commands
         this.getCommand("heal").setExecutor(new HealCommand());
+        this.getCommand("feed").setExecutor(new FeedCommand());
+        this.getCommand("god").setExecutor(new GodCommand(this));
+        this.getCommand("fly").setExecutor(new FlyCommand(this));
     }
 
     public PlayerInitializer getPlayerInit() {

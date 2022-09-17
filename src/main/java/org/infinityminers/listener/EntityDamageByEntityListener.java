@@ -11,12 +11,10 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class EntityDamageByEntityListener implements Listener {
-    private Main main;
     private HashMap<UUID, BasicPlayer> basicPlayerHashMap;
 
     public EntityDamageByEntityListener(Main main) {
-        this.main = main;
-        this.basicPlayerHashMap = main.getPlayerInit().getBasicPlayerHashMap();
+        this.basicPlayerHashMap = main. getPlayerInit().getBasicPlayerHashMap();
     }
 
     @EventHandler
