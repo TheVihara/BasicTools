@@ -1,32 +1,51 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
 plugins {
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 group 'org.infinityminers'
-version '1.0'
+version '0.1'
 
 repositories {
     mavenCentral()
-
     maven {
+        name = 'spigotmc-repo'
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
-
-        content {
-            includeGroup 'org.bukkit'
-            includeGroup 'org.spigotmc'
-        }
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
     }
     maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
-    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
 }
 
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT'
 
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation("cloud.commandframework:cloud-core:1.7.0")
+    implementation("cloud.commandframework:cloud-bukkit:1.7.0")
+    implementation("cloud.commandframework:cloud-minecraft-extras:1.7.0")
+    implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.1'
 }
 
-test {
-    useJUnitPlatform()
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+}
+
+processResources {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    from (sourceSets.main.resources.srcDirs) {
+        include '**/*.yml'
+        filter ReplaceTokens, tokens: ["version": version]
+    }
+}
+
+shadowJar {
+    relocate("cloud.commandframework", "eu.virtusdevelops.commandapi")
 }

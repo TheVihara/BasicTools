@@ -1,28 +1,7 @@
-main: org.infinityminers.Main
-version: 1.0
 name: BasicTools
-description: Provides you with basic tools, that will full-fill your server's needs.
+version: '@version@'
+main: org.infinityminers.basictools.Main
 api-version: 1.19
 author: Vihara
 website: infinityminers.org
-commands:
-  heal:
-    description: When executed, heals the target.
-    permission: basictools.heal
-    permission-message: You do not have permission to use this command.
-    usage: "Usage /heal [player]"
-  feed:
-    description: When executed, feeds the target.
-    permission: basictools.feed
-    permission-message: You do not have permission to use this command.
-    usage: "Usage /feed [player]"
-  god:
-    description: When executed, the target becomes god.
-    permission: basictools.god
-    permission-message: You do not have permission to use this command.
-    usage: "Usage /god [player]"
-  fly:
-    description: When executed, the target's fly mode gets toggled.
-    permission: basictools.fly
-    permission-message: You do not have permission to use this command.
-    usage: "Usage /fly [player]"
+description: Provides you with basic tools, that will full-fill your server's needs.
